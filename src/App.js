@@ -1,26 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Login from './components/Login'
+import ProfilePage from './components/ProfilePage'
+import Signup from './components/Signup'
+import CreatePost from './components/CreatePost'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component{
+  state = {
+    page: ''
+  }
+
+  render(){
+
+    switch(this.state.page) {
+      case 'LOG IN':
+        return <Login />
+      case 'PROFILE':
+        return <ProfilePage />
+      case 'SIGN UP NOW':
+        return <Signup />
+      case 'CREATE A POST':
+        return <CreatePost />
+      default:
+        return <Login />
+    }
+
+
+  }
+
 }
 
 export default App;
