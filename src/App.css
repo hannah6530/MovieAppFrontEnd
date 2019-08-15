@@ -23,16 +23,7 @@ h3{
   top: 100px;
   font-size: 22px;
 }
-#reset{
-  position: relative;
-  right: -220px;
-  top: -30px;
-}
-#create{
-  position: relative;
-  right: -220px;
-  bottom: -70px;
-}
+
 .title:hover, a:hover, .logo:hover{
   color: red;
 }
@@ -109,6 +100,16 @@ p{
   color: white;
   font-weight: bold;
 }
+#reset{
+  position: relative;
+  right: -220px;
+  top: 0px;
+}
+#create{
+  position: relative;
+  right: -220px;
+  bottom: -70px;
+}
 
  /* NAVBAR */
  *{
@@ -118,7 +119,7 @@ p{
  }
  li, a{
     font-family: 'Didact Gothic', sans-serif;
-    font-weight: 700;
+    font-weight: 900;
     font-size: 16px;
     color: red;
     text-decoration: none;
@@ -145,7 +146,6 @@ p{
    font-weight: bold;
  }
  .logo{
-   font-weight: 900;
    color: white;
    cursor: pointer;
    margin-right: auto;

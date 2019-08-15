@@ -13,15 +13,24 @@ export default class Login extends React.Component{
       [event.target.name]: event.target.value
     })
   }
-  handleSubmit = () => {
+  handleSubmit = (event) => {
+    event.preventDefault()
+    fetch('http://localhost:3001/login', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'appliation/json'
+      },
+      body: JSON.stringify(this.state)
+    })
 
   }
   handleForgotPassword = () => {
-    console.log('hi')
+
   }
 
   handleSignUp = () => {
-    console.log('hey')
+
   }
 
   render(){
@@ -30,7 +39,7 @@ export default class Login extends React.Component{
     <div className="model" id="modal">
         <span className="modelHeading">Log Into Your Account</span>
 
-        <form id="create_form" action="#" onSubmit={this.handleSubmit}>
+        <form id="create_form" action="#" onSubmit={this.handleSubmit} >
               <input type='text' placeholder="Username" name="username" value={this.state.username} onChange={this.handleChange}/>
               <input type='text' placeholder="Password" name="password" value={this.state.password} onChange={this.handleChange}/>
               <button className="registerButton" type="submit">Login</button>

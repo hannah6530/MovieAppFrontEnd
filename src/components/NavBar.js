@@ -1,8 +1,10 @@
 import React from 'react'
 
 class NavBar extends React.Component{
+  
 
   render(){
+
     return(
       <header>
         <h4 className="logo">Movie Splazz</h4>
