@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-export default class ProiflePage extends React.Component{
+export default class ProfilePage extends React.Component{
 
   render()
     {

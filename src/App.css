@@ -15,63 +15,32 @@ body {
 .header{
   /* position: relative; */
   left: 530px;
-
 }
-.title:hover{
+h3{
+  color: white;
+  font-family: 'Dancing Script', cursvie;
+  position: absolute;;
+  top: 100px;
+  font-size: 22px;
+}
+#reset{
+  position: relative;
+  right: -220px;
+  top: -30px;
+}
+#create{
+  position: relative;
+  right: -220px;
+  bottom: -70px;
+}
+.title:hover, a:hover, .logo:hover{
   color: red;
 }
 #create_movie_posting_form{
   position: absolute;
   top: 530px;
-  /* display: none; */
-}
-#movie_post_list{
-  position: absolute;
-  top: 900px;
-  color: white;
-
-}
-
-#movie_post_list img{
-  /* height: 200px;
-  width: 50%;
-  border-radius: 8px; */
-  border: 1px solid #ddd;
-border-radius: 4px;
-padding: 5px;
-width: 150px;
-}
-a{
-  color:  red;
-}
-h3{
-  color: white;
-  font-family: cursive;
-  position: absolute;
-  top: 100px;
-}
-/* #create_form{
-  position: absolute;
-  top: 170px;
-  display: none;
-
-} */
-#userInfo{
-  position: absolute;
-  top: 220px;
-  /* display: absolute; */
-}
-#movie_post_list ul li {
-  list-style: none;
-}
-.gridView{
-  display: grid;
-  grid-template-columns: 160px 160px 160px 160px 160px 160px;
-  grid-gap: 60px;
-  /* border-radius: 5px; */
 }
 .button{
-
   background-color: transparent;
   font-weight: bold;
   color: white;
@@ -79,81 +48,39 @@ h3{
   border-radius: 10px;
 }
 .button:hover{
-background-color: darkblue;
-box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+  background-color: darkblue;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
-.signUp{
-  color: white;
-  font-weight: bold;
-  font-size: 15px;
-  padding: 20px 35px;
-  border-radius: 10px;
-  background-color: crimson;
-  position: absolute;
-  top: 40px;
-  left: 35px;
-}
-
-.LogIn{
-  color: white;
-  font-weight: bold;
-  font-size: 15px;
-  padding: 20px 60px;
-  border-radius: 10px;
-  background-color: crimson;
-  position: absolute;
-  top: 40px;
-  left: 260px;
-}
-.signUp:hover, .createPost:hover, .LogIn:hover, .profile:hover{
-  background-color: red;
-}
-
 .model, .createMoviePost{
-  width: 350px;
+  width: 380px;
   height: 60%;
   margin: auto;
   top: 0px;
   right: 0px;
-  bottom: 0px;
+  bottom: -70px;
   left: 0px;
   position: fixed;
-  background: black;
+  background-color: black;
   border: 2px solid #239;
   border-radius: 10px;
   box-sizing: border-box;
-  pointer-events: none;
-  opacity: 0;
-  transition: all 500ms ease;
+  opactiy: 1;
 }
-.model:target, .createMoviePost:target{
-  opacity: 1;
-  pointer-events: auto;
-
+p{
+  color: white;
 }
-.model > div, .createMoviePost > div{
-  transform: translate(0px, -50px);
-  transition: all 500ms ease;
-}
-.model:target > div, .createMoviePost:target > div{
-  transform: translate(0px, 0px);
-}
-
 .modelHeading, .movieModelHeading{
   width: 100%;
   display: block;
   height: 60px;
   margin-bottom: 30px;
   color: yellow;
-  padding: 10px;
   box-sizing: border-box;
   text-align: center;
   font-size: 30px;
   font-family: 'Righteous', cursive;
   border-bottom: 2px solid #fefefe;
-   /* text-decoration: underline #fefefe; */
 }
-
 .model input{
   margin-bottom: 15px;
   padding: 10px;
@@ -178,85 +105,51 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
   border: 2px solid #333;
   padding: 7px 9px 11px 9px;
 }
-
-.close, .exit{
-  position: absolute;
-  border: 2px solid #333;
-  padding: 7px 9px 11px 9px;
-  text-decoration: none;
-  top: -20px;
-  right: -20px;
-  border-radius: 50%;
-  background: black;
-  color: gray;
-  transition: background 500ms;
-}
-.close:hover, .exit:hover{
-  background-color: #444;
-  cursor: pointer;
-}
 .registerButton:hover, .createPostButton:hover{
   color: white;
   font-weight: bold;
 }
-.signUp a, .createPost a, .LogIn a, .profile a{
-  color: white;
-}
 
-/* .createMoviePost input{
-
-  margin-bottom: 50px;
-
-  padding: 10px;
-  width: 100%;
-  box-sizing: border-box;
-  border-radius: 5px;
-  height: 45px;
-  border: 0px;
-  text-align: center;
-  float: center;
-  font-family: georgia;
-  font-size: 10pt;
-  border: 2px solid #333;
-  padding: 7px 9px 11px 9px;
-} */
-.createPost{
-  color: white;
-  font-weight: bold;
-  font-size: 15px;
-  padding: 20px 35px;
-  border-radius: 10px;
-  background-color: crimson;
-  position: absolute;
-  top: 43px;
-  right: 250px;
-}
-.profile{
-  color: white;
-  font-weight: bold;
-  font-size: 15px;
-  padding: 20px 50px;
-  border-radius: 10px;
-  background-color: crimson;
-  position: absolute;
-  top: 43px;
-  right: 40px;
-}
-.createMoviePost input{
-  /* display: inline-block; */
-  /* margin-bottom: -50px; */
-  /* position: relative; */
-  /* margin-top: -300px; */
-  padding: 10px;
-  width: 100%;
-  box-sizing: border-box;
-  border-radius: 5px;
-  height: 45px;
-  border: 0px;
-  text-align: center;
-  float: center;
-  font-family: georgia;
-  font-size: 10pt;
-  border: 2px solid #333;
-  padding: 7px 9px 11px 9px;
-}
+ /* NAVBAR */
+ *{
+   margin: 0px;
+   padding: 0px;
+   box-sizing: border-box;
+ }
+ li, a{
+    font-family: 'Didact Gothic', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    color: red;
+    text-decoration: none;
+ }
+ header{
+   display: flex;
+   justify-content: flex-end;
+   align-items: center;
+   padding: 30px 10%;
+ }
+ .navLinks{
+   list-style: none;
+ }
+ .navLinks li{
+   display: inline-block;
+   padding: 0px 20px;
+ }
+ .navLinks li, a{
+   transition: all 0.3s ease 0s;
+ }
+ .navLinks li, a:hover{
+   transition: all 0.3s ease 0s;
+   color: green;
+   font-weight: bold;
+ }
+ .logo{
+   font-weight: 900;
+   color: white;
+   cursor: pointer;
+   margin-right: auto;
+   text-shadow: 1px 1px #fe4902,
+                 2px 2px #fe4902,
+                 3px 3px #fe4902;
+ }

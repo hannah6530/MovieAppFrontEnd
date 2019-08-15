@@ -4,7 +4,6 @@ import React from 'react';
 export default class Login extends React.Component{
 
   state = {
-    name: '',
     username: '',
     password: ''
   }
@@ -17,19 +16,27 @@ export default class Login extends React.Component{
   handleSubmit = () => {
 
   }
+  handleForgotPassword = () => {
+    console.log('hi')
+  }
+
+  handleSignUp = () => {
+    console.log('hey')
+  }
 
   render(){
 
     return(
-    <div class="model" id="modal">
-        <a href="#" className="close">X</a>
-        <span className="modelHeading">Enter Your Details</span>
+    <div className="model" id="modal">
+        <span className="modelHeading">Log Into Your Account</span>
 
         <form id="create_form" action="#" onSubmit={this.handleSubmit}>
               <input type='text' placeholder="Username" name="username" value={this.state.username} onChange={this.handleChange}/>
               <input type='text' placeholder="Password" name="password" value={this.state.password} onChange={this.handleChange}/>
-              <button className="registerButton" type="submit">Register</button>
+              <button className="registerButton" type="submit">Login</button>
         </form>
+        <p id="create">No account? <a href="#" onClick={this.handleSignUp}>Sign up</a></p>
+        <p id="reset"><a href='#' onClick={this.handleForgotPassword}>Forgot Password?</a></p>
     </div>
     );
 }
