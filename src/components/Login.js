@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 export default class Login extends React.Component{
 
   state = {
@@ -32,14 +31,6 @@ export default class Login extends React.Component{
     })
 
   }
-  handleForgotPassword = () => {
-
-  }
-
-  handleSignUp = () => {
-
-  }
-
   render(){
 
     return(
@@ -54,8 +45,8 @@ export default class Login extends React.Component{
               <input type='text' placeholder="Password" name="password" value={this.state.password} onChange={this.handleChange}/>
               <button className="registerButton" type="submit">Login</button>
             </form>
-              <p id="create">No account? <a href="#" onClick={this.handleSignUp}>Sign up</a></p>
-              <p id="reset"><a href='#' onClick={this.handleForgotPassword}>Forgot Password?</a></p>
+              <p id="create">No account? <a href="/signup">Sign up</a></p>
+              <p id="reset"><a href='#'>Forgot Password?</a></p>
           </div>
     </div>
     );

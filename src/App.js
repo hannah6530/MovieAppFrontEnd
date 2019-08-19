@@ -11,7 +11,8 @@ import { Switch, Route } from 'react-router-dom'
 class App extends React.Component{
 
   state = {
-    username: ''
+    username: '',
+    logged_in: ''
   }
 
 
@@ -24,7 +25,10 @@ class App extends React.Component{
   })
   .then(res => res.json())
   .then(profileData => {
-    this.setState({username: profileData.username})
+    this.setState({
+      username: profileData.username,
+      logged_in: localStorage.token
+    })
   })
 }
   }
@@ -33,12 +37,12 @@ class App extends React.Component{
 
     return(
       <div>
-        {localStorage.token && <NavBar />}
+        {this.state.logged_in && <NavBar />}
         <Switch>
           <Route path="/profile" render={(routerProps) => <ProfilePage username={this.state.username}{...routerProps} />} />
-          <Route path="/" render={(routerProps)=> <Login {...routerProps}/>} />
+          <Route path="/signup" render={(routerProps)=> <Signup {...routerProps}/>} />
+          <Route exact path="/" render={(routerProps)=> <Login {...routerProps}/>} />
         </Switch>
-
       </div>
     )
 

@@ -14,6 +14,9 @@ export default class Signup extends React.Component{
   render()
   {
     return(
+    <div>
+    <h1 className="title">Welcome to Movie Splazz</h1>
+    <h3 className="header"> Where you can add postings of your favorite movies! </h3>
       <div className="model" id="modal">
           <span className="modelHeading">Create New Account</span>
 
@@ -23,6 +26,7 @@ export default class Signup extends React.Component{
                 <button className="registerButton" type="submit">Sign Up</button>
           </form>
       </div>
+    </div>
     );
 }
 }
