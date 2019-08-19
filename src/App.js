@@ -29,21 +29,18 @@ class App extends React.Component{
 }
   }
 
-
   render(){
 
     return(
+      <div>
+        {localStorage.token && <NavBar />}
+        <Switch>
+          <Route path="/profile" render={(routerProps) => <ProfilePage username={this.state.username}{...routerProps} />} />
+          <Route path="/" render={(routerProps)=> <Login {...routerProps}/>} />
+        </Switch>
 
-      <Switch>
-        <Route path="/profile" render={(routerProps) => <ProfilePage username={this.state.username}{...routerProps} />} />
-        <Route path="/home" render={(routerProps) => <NavBar {...routerProps} />} />
-        <Route path="/" render={(routerProps)=> <Login {...routerProps}/>} />
-      </Switch>
-
-
+      </div>
     )
-
-
 
   }
 
