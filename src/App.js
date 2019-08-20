@@ -34,7 +34,6 @@ class App extends React.Component{
   }
 
   render(){
-
     return(
       <div>
         {this.state.logged_in && <NavBar />}
@@ -42,6 +41,7 @@ class App extends React.Component{
           <Route path="/profile" render={(routerProps) => <ProfilePage username={this.state.username}{...routerProps} />} />
           <Route path="/signup" render={(routerProps)=> <Signup {...routerProps}/>} />
           <Route exact path="/" render={(routerProps)=> <Login {...routerProps}/>} />
+          <Route path="/post" render={(routerProps)=> <CreatePost {...routerProps}/>} />
         </Switch>
       </div>
     )
