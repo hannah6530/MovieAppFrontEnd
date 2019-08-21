@@ -33,14 +33,23 @@ class App extends React.Component{
 }
   }
 
+  setLogin = (username) => {
+    console.log(username);
+    this.setState({
+      username: username,
+      logged_in: localStorage.token
+    })
+  }
+
   render(){
+    // console.log(this.state.logged_in)
     return(
       <div>
-        {this.state.logged_in && <NavBar />}
+{this.state.logged_in && <NavBar />}
         <Switch>
           <Route path="/profile" render={(routerProps) => <ProfilePage username={this.state.username}{...routerProps} />} />
           <Route path="/signup" render={(routerProps)=> <Signup {...routerProps}/>} />
-          <Route exact path="/" render={(routerProps)=> <Login {...routerProps}/>} />
+          <Route exact path="/" render={(routerProps)=> <Login setLogin={this.setLogin}{...routerProps}/>} />
           <Route path="/post" render={(routerProps)=> <CreatePost {...routerProps}/>} />
         </Switch>
       </div>

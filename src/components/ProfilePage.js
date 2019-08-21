@@ -8,11 +8,12 @@ export default class ProfilePage extends React.Component{
       this.props.history.push('/')
     }
   }
+
   render()
     {
       return(
       <div>
-      Logged In As {this.props.username}
+      <h1>Logged In As {this.props.username} </h1>
       </div>
     );
 }
