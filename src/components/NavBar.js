@@ -11,7 +11,7 @@ class NavBar extends React.Component{
             <ul className="navLinks">
                 <li><a href="/profile">Profile</a></li>
                 <li><a href="/movies">Movies</a></li>
-                <li><a href="/post">Create Post</a></li>
+                <li><a href="/createpost">Create Post</a></li>
             </ul>
       </nav>
       </header>

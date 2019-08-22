@@ -152,3 +152,22 @@ p{
                  2px 2px #fe4902,
                  3px 3px #fe4902;
  }
+ #movie_post_list{
+   position: absolute;
+   top: 900px;
+   color: white;
+ }
+ #movie_post_list img{
+border: 1px solid #ddd;
+border-radius: 4px;
+padding: 5px;
+width: 150px;
+}
+ #movie_post_list ul li{
+   lis-style: none;
+ }
+ .gridView{
+   display: grid;
+   grid-template-columns: 160px 160px 160px 160px 160px 160px;
+   grid-gap: 60px;
+ }

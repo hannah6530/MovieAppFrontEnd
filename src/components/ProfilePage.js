@@ -13,7 +13,7 @@ export default class ProfilePage extends React.Component{
     {
       return(
       <div>
-      <h1>Logged In As {this.props.username} </h1>
+      <h1>Logged In As {this.props.username}</h1>
       </div>
     );
 }

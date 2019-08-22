@@ -1,11 +1,19 @@
 import React from 'react'
 
-const Movies = () => {
+const Movies = (props) => {
 
   return(
-    <div>
+    <div id="movie_post_list" className="gridView">
 
-    <h1>hi</h1>
+    <ul>
+      <li>
+      hi {props.username}
+      </li>
+      <li>
+      </li>
+      <li>
+      </li>
+    </ul>
 
     </div>
 

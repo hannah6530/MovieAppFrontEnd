@@ -5,6 +5,7 @@ export default class Login extends React.Component{
   state = {
     username: '',
     password: '',
+    user_id: ''
 
   }
 
@@ -25,11 +26,11 @@ export default class Login extends React.Component{
     })
     .then(res => res.json())
     .then(data => {
-      console.log(data)
+      console.log(data.user_id)
       if (data.token) {
         localStorage.token = data.token
         this.props.history.push('/profile')
-        this.props.setLogin(data.username)
+        this.props.setLogin(data.username, data.user_id)
       }
     })
 
