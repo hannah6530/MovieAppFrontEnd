@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from 'react-router-dom'
 class NavBar extends React.Component{
 
 
@@ -9,9 +9,9 @@ class NavBar extends React.Component{
         <h4 className="logo">Movie Splazz</h4>
         <nav>
             <ul className="navLinks">
-                <li><a href="/profile">Profile</a></li>
-                <li><a href="/movies">Movies</a></li>
-                <li><a href="/createpost">Create Post</a></li>
+                <li><Link to="/profile">Profile</Link></li>
+                <li><Link to="/movies">Movies</Link></li>
+                <li><Link to="/createpost">Create Post</Link></li>
             </ul>
       </nav>
       </header>

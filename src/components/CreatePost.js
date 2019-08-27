@@ -24,16 +24,18 @@ class CreatePost extends React.Component {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
       },
-      body: JSON.stringify(this.state)
+      body: JSON.stringify({...this.state, user_id: this.props.userId})
     })
       .then(res => res.json())
       .then(data => {
+        this.props.onNewMovie(this.state)
         this.props.history.push('/movies')
        })
+
     }
 
   render(){
-    console.log(this.props.userId)
+
     return(
       <div className="model" id="modal">
           <span className="modelHeading">Enter Movie Details</span>
