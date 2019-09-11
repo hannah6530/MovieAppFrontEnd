@@ -10,13 +10,11 @@ import { Switch, Route } from 'react-router-dom'
 
 class App extends React.Component{
 
-  //create a function that adds a movie to the state of movies  and takes a movie as an arguement
+  //create a function that adds a movie to the state of movies and takes a movie as an arguement
   //in the fucntion create a way where the state of movies is updated with the movie
   //pass it down to the createpost componenent
   //in the create post invoke the function through props with the argument
   //use the data from the fetch and pass it into the function
-
-
   state = {
     username: '',
     logged_in: '',
@@ -25,6 +23,7 @@ class App extends React.Component{
   }
 
   componentDidMount() {
+    // let id = (localStorage.token) get user ID based on the token
     if (localStorage.token) {
   fetch('http://localhost:3000/profile', {
     headers: {
@@ -38,21 +37,21 @@ class App extends React.Component{
       username: profileData.username,
       logged_in: localStorage.token
     })
-  })
-  fetch('http://localhost:3000/movies', {
-    method: 'GET'
-  })
-  .then(res => res.json())
-  .then(movieData => {
-    this.setState({
-      movies: movieData
-    })
+
   })
 
 
+  // fetch(`http://localhost:3000/movies/${current_user_id}`, {
+  //   method: 'GET'
+  // })
+  // .then(res => res.json())
+  // .then(movieData => {
+  //   this.setState({
+  //     movies: movieData
+  //   })
+  // })
 }
   }
-
   setLogin = (username, current_user_id) => {
     this.setState({
       username: username,
@@ -60,17 +59,14 @@ class App extends React.Component{
       logged_in: localStorage.token
     })
   }
-
   handleNewMovie = (movie) => {
     this.setState({
       movies: [...this.state.movies, movie]
     })
   }
-
   render(){
     return(
       <div>
-
         {this.state.logged_in && <NavBar />}
         <Switch>
           <Route path="/profile" render={(routerProps) => <ProfilePage username={this.state.username}{...routerProps} />} />
