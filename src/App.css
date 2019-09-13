@@ -1,6 +1,6 @@
 body {
   /* background: blue; */
-  background-image: linear-gradient(to left, blue,indigo);
+  background-image: linear-gradient(to left, blue,indigo) !important;
 }
 .title {
   color: white;
@@ -9,8 +9,8 @@ body {
                 2px 2px #fe4902,
                 3px 3px #fe4902;
   font-size: 50px;
-  position: relative;
-  left: 480px;
+  position: relative !important;
+  left: 480px !important;
 }
 .header{
   /* position: relative; */
@@ -25,10 +25,11 @@ h2{
 
 h3{
   color: white;
-  font-family: 'Dancing Script', cursvie;
-  position: absolute;;
-  top: 100px;
-  font-size: 22px;
+  font-family: 'Dancing Script', cursvie !important;
+  position: absolute !important;
+  /* top: 100px !important; */
+  top: 60px !important;
+  font-size: 22px !important;
 }
 
 .title:hover, a:hover, .logo:hover{
@@ -78,6 +79,9 @@ p{
   font-size: 30px;
   font-family: 'Righteous', cursive;
   border-bottom: 2px solid #fefefe;
+  position: relative; /* added to position title*/
+  bottom: -10px; /* added to position title*/
+
 }
 .model input{
   margin-bottom: 15px;
@@ -127,11 +131,11 @@ p{
  li, a{
     font-family: 'Didact Gothic', sans-serif;
     font-size: 16px;
-    color: red;
+    color: red !important;
     text-decoration: none;
  }
  header{
-   display: flex;
+   display: flex !important;
    justify-content: flex-end;
    align-items: center;
    padding: 30px 10%;
@@ -147,8 +151,8 @@ p{
    transition: all 0.3s ease 0s;
  }
  .navLinks li, a:hover{
-   transition: all 0.3s ease 0s;
-   color: green;
+   transition: all 0.3s ease 0s !important;
+   color: green !important;
    font-weight: bold;
  }
  .logo{
@@ -195,4 +199,7 @@ p{
 }
 .favoriteButton:hover{
   background-color: black;
+}
+span{
+  bottom: 30px;
 }

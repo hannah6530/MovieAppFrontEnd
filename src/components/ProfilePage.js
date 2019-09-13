@@ -10,6 +10,10 @@ export default class ProfilePage extends React.Component{
     }
   }
 
+  handleLogout = () => {
+    console.log()
+  }
+
 
   render()
     {
@@ -24,7 +28,7 @@ export default class ProfilePage extends React.Component{
       <br/>
       <br/>
       <br/>
-      <button className="logout">Logout</button>
+      <button className="logout" onClick={this.handleLogout}>Logout</button>
       </div>
     );
 }
