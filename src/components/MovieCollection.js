@@ -18,7 +18,6 @@ class MovieCollection extends React.Component {
       <Card.Group itemsPerRow={4}>
       {movieList}
       </Card.Group>
-
     )
   }
 

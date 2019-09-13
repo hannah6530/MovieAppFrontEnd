@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, Image } from 'semantic-ui-react'
+import { Card, Image, Button } from 'semantic-ui-react'
 
 const Movie = (props) => {
   return(
@@ -14,6 +14,11 @@ const Movie = (props) => {
         <br/>
         <a href={props.movie.watch_link}> Watch Here </a>
         </Card.Description>
+      </Card.Content>
+      <Card.Content extra>
+        <Button>
+         Delete
+        </Button>
       </Card.Content>
     </Card>
   )
