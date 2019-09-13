@@ -5,7 +5,7 @@ import CreatePost from './components/CreatePost'
 import Signup from './components/Signup'
 import ProfilePage from './components/ProfilePage'
 import NavBar from './components/NavBar'
-import Movies from './components/Movies'
+import MovieCollection from './components/MovieCollection'
 import { Switch, Route } from 'react-router-dom'
 
 class App extends React.Component{
@@ -37,21 +37,26 @@ class App extends React.Component{
       username: profileData.username,
       logged_in: localStorage.token
     })
-
   })
 
-
-  // fetch(`http://localhost:3000/movies/${current_user_id}`, {
-  //   method: 'GET'
-  // })
-  // .then(res => res.json())
-  // .then(movieData => {
-  //   this.setState({
-  //     movies: movieData
-  //   })
-  // })
-}
   }
+}
+
+
+setMovies = () => {
+
+  fetch(`http://localhost:3000/users/${this.state.current_user_id}/movies`, {
+    method: 'GET'
+  })
+  .then(res => res.json())
+  .then(movieData => {
+    this.setState({
+      movies: movieData
+    })
+  })
+}
+
+
   setLogin = (username, current_user_id) => {
     this.setState({
       username: username,
@@ -59,6 +64,7 @@ class App extends React.Component{
       logged_in: localStorage.token
     })
   }
+
   handleNewMovie = (movie) => {
     this.setState({
       movies: [...this.state.movies, movie]
@@ -73,7 +79,7 @@ class App extends React.Component{
           <Route path="/signup" render={(routerProps)=> <Signup {...routerProps}/>} />
           <Route exact path="/" render={(routerProps)=> <Login setLogin={this.setLogin}{...routerProps}/>} />
           <Route path="/createpost" render={(routerProps)=> <CreatePost onNewMovie={this.handleNewMovie} userId={this.state.current_user_id} {...routerProps}/>} />
-          <Route path="/movies" render={(routerProps)=> <Movies username={this.state.username} movies={this.state.movies}{...routerProps}/>} />
+          <Route path="/movies" render={(routerProps)=> <MovieCollection username={this.state.username} setMovies={this.setMovies} movies={this.state.movies}{...routerProps}/>} />
         </Switch>
       </div>
     )
