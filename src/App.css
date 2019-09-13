@@ -16,6 +16,13 @@ body {
   /* position: relative; */
   left: 530px;
 }
+
+h2{
+  color: white;
+  position: relative;
+  left: 80px;
+}
+
 h3{
   color: white;
   font-family: 'Dancing Script', cursvie;
@@ -166,8 +173,40 @@ width: 150px;
  #movie_post_list ul li{
    lis-style: none;
  }
- .gridView{
-   display: grid;
-   grid-template-columns: 160px 160px 160px 160px 160px 160px;
-   grid-gap: 60px;
+
+ .logout{
+   border: none;
+   color: white;
+   padding: 15px 32px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   margin: 4px 2px;
+   font-size: 15px;
+   background-color: black;
+   font-weight: bold;
+   position: relative;
+   left: 80px;
  }
+
+ .logout:hover{
+    background-color: black;
+    transition-duration: 0.4s;
+    box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
+ }
+.favoriteButton{
+  color: white;
+  border: none;
+  display: inline-block;
+  text-decoration: none;
+  padding: 5px 32px;
+  background-color: transparent;
+  font-size: 15px;
+  font-weight: bold;
+  position: relative;
+  left: 50px;
+  transition-duration: 0.4s;
+}
+.favoriteButton:hover{
+  background-color: black;
+}

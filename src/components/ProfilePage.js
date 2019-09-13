@@ -1,6 +1,7 @@
 import React from 'react';
 
 
+
 export default class ProfilePage extends React.Component{
 
   componentDidMount(){
@@ -9,11 +10,21 @@ export default class ProfilePage extends React.Component{
     }
   }
 
+
   render()
     {
       return(
       <div>
-      <h1>Logged In As {this.props.username}</h1>
+      <h2>Hello {this.props.username}</h2>
+      <br/>
+
+      <button className="favoriteButton">Favorites</button>
+      <br/>
+      <button className="favoriteButton">Personal Information</button>
+      <br/>
+      <br/>
+      <br/>
+      <button className="logout">Logout</button>
       </div>
     );
 }
