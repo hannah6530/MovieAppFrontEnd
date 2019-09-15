@@ -1,6 +1,6 @@
 import React from 'react'
 import Movie from './Movie'
-import { Card } from 'semantic-ui-react'
+import { Grid } from 'semantic-ui-react'
 
 
 class MovieCollection extends React.Component {
@@ -15,9 +15,9 @@ class MovieCollection extends React.Component {
     })
 
     return(
-      <Card.Group itemsPerRow={4}>
+      <Grid columns={5}>
       {movieList}
-      </Card.Group>
+      </Grid>
     )
   }
 

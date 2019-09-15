@@ -1,27 +1,15 @@
 import React from 'react'
-import { Card, Image, Button } from 'semantic-ui-react'
+import { Grid, Image} from 'semantic-ui-react'
 
 const Movie = (props) => {
+
   return(
-    <Card>
+    <Grid.Column>
       <Image src={props.movie.image}/>
-      <Card.Content>
-        <Card.Header>{props.movie.name}</Card.Header>
-        <Card.Description>
-        Genre: {props.movie.genre}
-        <br/>
-        Rating: {props.movie.rating}
-        <br/>
-        <a href={props.movie.watch_link}> Watch Here </a>
-        </Card.Description>
-      </Card.Content>
-      <Card.Content extra>
-        <Button>
-         Delete
-        </Button>
-      </Card.Content>
-    </Card>
+      <span> {props.movie.name} </span>
+    </Grid.Column>
   )
 
 }
+
 export default Movie;
