@@ -44,16 +44,17 @@ class App extends React.Component{
 
 
 setMovies = () => {
-
-  fetch(`http://localhost:3000/users/${this.state.current_user_id}/movies`, {
-    method: 'GET'
-  })
-  .then(res => res.json())
-  .then(movieData => {
-    this.setState({
-      movies: movieData
+  if(this.state.current_user_id ){
+    fetch(`http://localhost:3000/users/${this.state.current_user_id}/movies`, {
+      method: 'GET'
     })
-  })
+    .then(res => res.json())
+    .then(movieData => {
+      this.setState({
+        movies: movieData
+      })
+    })
+  }
 }
 
 

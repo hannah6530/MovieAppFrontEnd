@@ -4,10 +4,15 @@ import { Grid, Image} from 'semantic-ui-react'
 const Movie = (props) => {
 
   return(
-    <Grid.Column>
-      <Image src={props.movie.image}/>
-      <span> {props.movie.name} </span>
-    </Grid.Column>
+    <div className="ui equal width grid">
+      <div className="six wide column">
+        <div className="ui segment">
+          <a href="#">
+            <img className="ui image" src={props.movie.image}/>
+          </a>
+    </div>
+      </div>
+        </div>
   )
 
 }
