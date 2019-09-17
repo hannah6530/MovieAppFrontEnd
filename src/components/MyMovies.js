@@ -2,11 +2,10 @@ import React from 'react'
 import Movie from './Movie'
 import { Grid } from 'semantic-ui-react'
 
-
-class MovieCollection extends React.Component {
+class MyMovies extends React.Component {
 
   componentDidMount() {
-    this.props.allmovies()
+    this.props.setMovies()
   }
 
   render(){
@@ -21,5 +20,7 @@ class MovieCollection extends React.Component {
     )
   }
 
+
+
 }
-export default MovieCollection;
+export default MyMovies;

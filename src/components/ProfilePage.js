@@ -1,6 +1,5 @@
 import React from 'react';
-
-
+import { Link } from 'react-router-dom'
 
 export default class ProfilePage extends React.Component{
 
@@ -11,7 +10,9 @@ export default class ProfilePage extends React.Component{
   }
 
   handleLogout = () => {
-    console.log()
+    if(localStorage.token){
+      localStorage.clear()
+    }
   }
 
 
@@ -26,9 +27,11 @@ export default class ProfilePage extends React.Component{
       <br/>
       <button className="favoriteButton">Personal Information</button>
       <br/>
+      <button className="favoriteButton"><Link to="/my_movie_posts">My Movie Posts</Link></button>
       <br/>
       <br/>
-      <button className="logout" onClick={this.handleLogout}>Logout</button>
+      <br/>
+      <button className="logout" onClick={this.handleLogout}><Link to="/">Logout</Link></button>
       </div>
     );
 }
