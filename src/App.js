@@ -54,7 +54,7 @@ setMovies = () => {
     .then(res => res.json())
     .then(movieData => {
       this.setState({
-        movies: movieData
+        movies: movieData.movies
       })
     })
   }
@@ -68,7 +68,7 @@ setAllMovies = () => {
     .then(res => res.json())
     .then(movieData => {
       this.setState({
-        movies: movieData
+        movies: movieData.movies
       })
     })
   }

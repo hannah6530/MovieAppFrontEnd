@@ -8,7 +8,7 @@ const Movie = (props) => {
       <div className="six wide column">
         <div className="ui segment">
           <a href="#">
-            <img className="ui image" src={props.movie.image}/>
+            <img className="ui image" src={props.image}/>
           </a>
     </div>
       </div>
