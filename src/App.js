@@ -46,7 +46,7 @@ class App extends React.Component{
 }
 
 
-setMovies = () => {
+setMovies = () => { //allows the user to see the movie posts they created
   if(this.state.current_user_id ){
     fetch(`http://localhost:3000/users/${this.state.current_user_id}/movies`, {
       method: 'GET'
@@ -59,6 +59,7 @@ setMovies = () => {
     })
   }
 }
+
 
 setAllMovies = () => {
   if(this.state.current_user_id ){
@@ -91,18 +92,35 @@ setAllMovies = () => {
   }
 
 
+
   render(){
     return(
       <div>
         {this.state.logged_in && <NavBar />}
         <Switch>
-          <Route path="/profile" render={(routerProps) => <ProfilePage username={this.state.username} {...routerProps} />} />
-          <Route path="/signup" render={(routerProps)=> <Signup {...routerProps}/>} />
-          <Route exact path="/" render={(routerProps)=> <Login setLogin={this.setLogin}{...routerProps}/>} />
-          <Route path="/createpost" render={(routerProps)=> <CreatePost onNewMovie={this.handleNewMovie} userId={this.state.current_user_id} {...routerProps}/>} />
-          <Route path="/movies" render={(routerProps)=> <MovieCollection movies={this.state.movies} allmovies={this.setAllMovies}{...routerProps}/>} />
-          <Route path="/my_movie_posts" render={(routerProps)=> <MyMovies username={this.state.username} setMovies={this.setMovies} movies={this.state.movies} {...routerProps}/>} />
-          <Route path="/favorites" render={(routerProps) => <Favorites {...routerProps}/>} />
+          <Route path="/profile" render={(routerProps) => <ProfilePage
+          username={this.state.username}
+          {...routerProps} />} />
+          <Route path="/signup" render={(routerProps)=> <Signup
+            {...routerProps}/>} />
+          <Route exact path="/" render={(routerProps)=> <Login
+          setLogin={this.setLogin}
+          {...routerProps}/>} />
+          <Route path="/createpost" render={(routerProps)=> <CreatePost
+            onNewMovie={this.handleNewMovie}
+            userId={this.state.current_user_id}
+            {...routerProps}/>} />
+          <Route path="/movies" render={(routerProps)=> <MovieCollection
+            movies={this.state.movies}
+            allmovies={this.setAllMovies}
+            {...routerProps}/>} />
+          <Route path="/my_movie_posts" render={(routerProps)=> <MyMovies
+            username={this.state.username}
+            setMovies={this.setMovies}
+            movies={this.state.movies} {...routerProps}/>} />
+          <Route path="/favorites" render={(routerProps) => <Favorites
+            favorites={this.state.favorites}
+            {...routerProps}/>} />
         </Switch>
       </div>
     )

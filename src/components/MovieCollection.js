@@ -15,9 +15,11 @@ class MovieCollection extends React.Component {
     })
 
     return(
-      <Grid columns={5}>
-      {movieList}
-      </Grid>
+      <div className="ui grid container">
+        <div className="four wide coloumn">
+          {movieList}
+        </div>
+      </div>
     )
   }
 
