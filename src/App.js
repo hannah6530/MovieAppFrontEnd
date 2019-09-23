@@ -75,8 +75,6 @@ setAllMovies = () => {
   }
 }
 
-
-
   setLogin = (username, current_user_id) => {
     this.setState({
       username: username,
@@ -91,10 +89,23 @@ setAllMovies = () => {
     })
   }
 
+  deleteMovie = (movie) => {
+        if(this.state.current_user_id){
+   fetch(`http://localhost:3000/users/${this.state.current_user_id}/movies/${movie.id}`, {
+         method: 'DELETE'
+        })
+      .then(res => res.json())
+.then(() => {
+     this.setState({
+         movies: this.state.movies.filter(a_movie => movie.id !== a_movie.id)
+      })
+    })
+  }
+ }
 
 
   render(){
-    return(
+    return (
       <div>
         {this.state.logged_in && <NavBar />}
         <Switch>
@@ -113,11 +124,14 @@ setAllMovies = () => {
           <Route path="/movies" render={(routerProps)=> <MovieCollection
             movies={this.state.movies}
             allmovies={this.setAllMovies}
+            deleteMovie={this.deleteMovie}
             {...routerProps}/>} />
           <Route path="/my_movie_posts" render={(routerProps)=> <MyMovies
             username={this.state.username}
             setMovies={this.setMovies}
-            movies={this.state.movies} {...routerProps}/>} />
+            movies={this.state.movies}
+            deleteMovie={this.deleteMovie}
+            {...routerProps}/>} />
           <Route path="/favorites" render={(routerProps) => <Favorites
             favorites={this.state.favorites}
             {...routerProps}/>} />

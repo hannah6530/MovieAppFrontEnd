@@ -1,7 +1,12 @@
 import React from 'react'
-import { Grid, Image} from 'semantic-ui-react'
+import { Grid, Image, Icon} from 'semantic-ui-react'
 
 const Movie = (props) => {
+
+  let handleClick = () => {
+    props.handleDeleteMovie(props)
+  }
+
 
   return(
     <div className="ui equal width grid">
@@ -9,6 +14,7 @@ const Movie = (props) => {
         <div className="ui segment">
           <a href="#">
             <img className="ui image" src={props.image}/>
+            <Icon name='trash alternate' size='large' onClick={handleClick}/>
           </a>
     </div>
       </div>

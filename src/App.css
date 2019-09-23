@@ -203,3 +203,9 @@ p{
 span{
   bottom: 30px;
 }
+i{
+  color: gray;
+}
+i:hover{
+  color: red
+}
