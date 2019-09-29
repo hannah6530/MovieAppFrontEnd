@@ -7,7 +7,6 @@ const Movie = (props) => {
     props.handleDeleteMovie(props)
   }
 
-
   return(
     <div className="ui equal width grid">
       <div className="six wide column">
@@ -15,6 +14,7 @@ const Movie = (props) => {
           <a href="#">
             <img className="ui image" src={props.image}/>
             <Icon name='trash alternate' size='large' onClick={handleClick}/>
+            <i class="heart outline icon"></i>
           </a>
     </div>
       </div>

@@ -209,3 +209,6 @@ i{
 i:hover{
   color: red
 }
+.AccountInfoWrapper{
+  margin: auto;
+}

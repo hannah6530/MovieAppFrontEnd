@@ -1,13 +1,24 @@
 import React from 'react'
+import Movie from './Movie'
+import { Grid } from 'semantic-ui-react'
 
+class Favorites extends React.Component {
 
-const Favorites = () => {
+  componentDidMount() {
+    this.props.setMovies()
+  }
 
-  return(
-    <div>
-    hi
-    </div>
-  )
+  render(){
+    const movieList = this.props.movies.map(movie =>{
+      return <Movie key={movie.id}  handleDeleteMovie={this.props.deleteMovie} {...movie}/>
+    })
+
+    return(
+      <Grid columns={5}>
+      {movieList}
+      </Grid>
+    )
+  }
 
 }
 export default Favorites;

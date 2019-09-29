@@ -21,6 +21,8 @@ class App extends React.Component{
     username: '',
     logged_in: '',
     current_user_id: '',
+    name: '',
+    email: '',
     movies: [],
     favorites: []
   }
@@ -37,6 +39,8 @@ class App extends React.Component{
   .then(profileData => {
     this.setState({
       current_user_id: profileData.id,
+      name: profileData.name,
+      email: profileData.email,
       username: profileData.username,
       logged_in: localStorage.token
     })
@@ -75,8 +79,9 @@ setAllMovies = () => {
   }
 }
 
-  setLogin = (username, current_user_id) => {
+  setLogin = (username, current_user_id, name) => {
     this.setState({
+      name: name,
       username: username,
       current_user_id: current_user_id,
       logged_in: localStorage.token
@@ -102,8 +107,11 @@ setAllMovies = () => {
     })
   }
  }
-
-
+ handleLogout = () => {
+   if(localStorage.token){
+     localStorage.clear()
+   }
+ }
   render(){
     return (
       <div>
@@ -111,6 +119,9 @@ setAllMovies = () => {
         <Switch>
           <Route path="/profile" render={(routerProps) => <ProfilePage
           username={this.state.username}
+          name={this.state.name}
+          email={this.state.email}
+          logout={this.handleLogout}
           {...routerProps} />} />
           <Route path="/signup" render={(routerProps)=> <Signup
             {...routerProps}/>} />
@@ -134,11 +145,11 @@ setAllMovies = () => {
             {...routerProps}/>} />
           <Route path="/favorites" render={(routerProps) => <Favorites
             favorites={this.state.favorites}
+            movies={this.state.movies}
             {...routerProps}/>} />
         </Switch>
       </div>
     )
-
   }
 
 }
