@@ -210,5 +210,54 @@ i:hover{
   color: red
 }
 .AccountInfoWrapper{
-  margin: auto;
+  /* margin: auto; */
+  width: 50%;
+  position: absolute;
+  height: 200px;
+  background-color: blue;
+  margin: 40px 30px 0px 40px;
+  padding: 20px 0px;
+  box-shadow: 5px 10px 18px black;
+  top: 100px;
+  right: 30px;
+}
+#h2{
+  right: 20px;
+  font-family: cursive;
+}
+.positionRight{
+  font-family: cursive;
+  left: 700px;
+  top: -220px;
+  font-family: cursive;
+  text-shadow: 1px 1px #fe4902,
+                2px 2px #fe4902,
+                3px 3px #fe4902;
+
+}
+#text{
+  font-size: 20px;
+  font-family: cursive;
+  position: relative;
+  right: -10px;
+}
+.update{
+  border: none;
+  color: white !important;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  font-size: 15px;
+  background-color: black;
+  font-weight: bold;
+  position: relative;
+  right: -10px;
+}
+
+.update:hover{
+   background-color: black;
+   transition-duration: 0.4s;
+   box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
 }

@@ -20,7 +20,7 @@ export default class ProfilePage extends React.Component{
     {
       return(
       <div>
-        <h2>Hello {this.props.name}</h2>
+        <h2 id="h2">Hello {this.props.name}</h2>
         <br/>
         <button className="favoriteButton">Favorites</button>
         <br/>
@@ -28,11 +28,12 @@ export default class ProfilePage extends React.Component{
         <br/>
         <br/>
         <button className="logout" onClick={this.handleLogout}><Link to="/">Logout</Link></button>
+        <h2 className="positionRight"> Account Information </h2>
         <div className="AccountInfoWrapper">
-          <h2> Account Information </h2>
-          Username: {this.props.username}
+          <p id="text">Username: {this.props.username}</p>
+          <p id="text">Email: {this.props.email}</p>
           <br/>
-          Email: {this.props.email}
+          <button className="update"><Link to="/update">Update Info</Link></button>
         </div>
 
       </div>

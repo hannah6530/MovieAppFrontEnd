@@ -11,7 +11,10 @@ class MovieCollection extends React.Component {
 
   render(){
     const movieList = this.props.movies.map(movie =>{
-      return <Movie key={movie.id}  handleDeleteMovie={this.props.deleteMovie} {...movie}/>
+      return <Movie key={movie.id}
+      handleDeleteMovie={this.props.deleteMovie}
+      handleFavMovie={this.props.favMovie}
+      {...movie}/>
     })
 
     return(

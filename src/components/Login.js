@@ -6,7 +6,8 @@ export default class Login extends React.Component{
     name: '',
     username: '',
     password: '',
-    user_id: ''
+    user_id: '',
+    email: ''
   }
 
   handleChange = (event) => {
@@ -29,7 +30,7 @@ export default class Login extends React.Component{
       if (data.token) {
         localStorage.token = data.token
         this.props.history.push('/profile')
-        this.props.setLogin(data.username, data.user_id, data.name)
+        this.props.setLogin(data.username, data.user_id, data.name, data.email)
       }
     })
   }

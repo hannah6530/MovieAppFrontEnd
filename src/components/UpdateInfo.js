@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-export default class Signup extends React.Component{
+class UpdateInfo extends React.Component{
 
   state = {
     name: '',
@@ -15,8 +15,8 @@ export default class Signup extends React.Component{
 
   handleSubmit = (event) => {
     event.preventDefault()
-    fetch('http://localhost:3000/signup', {
-      method: 'POST',
+    fetch(`http://localhost:3000/users/${this.props.current_user_id}`, {
+      method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
@@ -30,26 +30,30 @@ export default class Signup extends React.Component{
         this.props.history.push('/profile')
       }
     })
+    // console.log(this.props.current_user_id)
   }
 
-  render()
-  {
+  render(){
+
     return(
-    <div>
-    <h1 className="title">Welcome to Movie Splazz</h1>
-    <h3 className="header"> Where you can add postings of your favorite movies! </h3>
       <div className="model" id="modal">
-          <span className="modelHeading">Create New Account</span>
+          <span className="modelHeading">Change Account Information</span>
 
           <form id="create_form" action="#" onSubmit={this.handleSubmit}>
                 <input type='text' placeholder="Name" name="name" value={this.state.name} onChange={this.handleChange}/>
                 <input type='text' placeholder="Email" name="email" value={this.state.email} onChange={this.handleChange}/>
                 <input type='text' placeholder="Username" name="username" value={this.state.username} onChange={this.handleChange}/>
                 <input type='text' placeholder="Password" name="password" value={this.state.password} onChange={this.handleChange}/>
-                <button className="registerButton" type="submit">Sign Up</button>
+                <button className="registerButton" type="submit">Update</button>
           </form>
       </div>
-    </div>
-    );
+
+    )
+
+  }
+
+
+
+
 }
-}
+export default UpdateInfo;

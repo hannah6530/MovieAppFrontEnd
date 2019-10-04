@@ -8,6 +8,7 @@ import NavBar from './components/NavBar'
 import MovieCollection from './components/MovieCollection'
 import Favorites from './components/Favorites'
 import MyMovies from './components/MyMovies'
+import UpdateInfo from './components/UpdateInfo'
 import { Switch, Route } from 'react-router-dom'
 
 class App extends React.Component{
@@ -49,7 +50,6 @@ class App extends React.Component{
   }
 }
 
-
 setMovies = () => { //allows the user to see the movie posts they created
   if(this.state.current_user_id ){
     fetch(`http://localhost:3000/users/${this.state.current_user_id}/movies`, {
@@ -79,8 +79,9 @@ setAllMovies = () => {
   }
 }
 
-  setLogin = (username, current_user_id, name) => {
+  setLogin = (username, current_user_id, name, email) => {
     this.setState({
+      email: email,
       name: name,
       username: username,
       current_user_id: current_user_id,
@@ -107,6 +108,15 @@ setAllMovies = () => {
     })
   }
  }
+ favMovie = (movie) => {
+   this.setState({
+     favorites: [...this.state.favorites, movie]
+   })
+   console.log(this.state.favorites)
+
+
+ }
+
  handleLogout = () => {
    if(localStorage.token){
      localStorage.clear()
@@ -136,6 +146,7 @@ setAllMovies = () => {
             movies={this.state.movies}
             allmovies={this.setAllMovies}
             deleteMovie={this.deleteMovie}
+            favMovie={this.favMovie}
             {...routerProps}/>} />
           <Route path="/my_movie_posts" render={(routerProps)=> <MyMovies
             username={this.state.username}
@@ -146,6 +157,9 @@ setAllMovies = () => {
           <Route path="/favorites" render={(routerProps) => <Favorites
             favorites={this.state.favorites}
             movies={this.state.movies}
+            {...routerProps}/>} />
+          <Route path="/update" render={(routerProps) => <UpdateInfo
+            current_user_id={this.state.current_user_id}
             {...routerProps}/>} />
         </Switch>
       </div>
