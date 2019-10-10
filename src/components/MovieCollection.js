@@ -19,10 +19,12 @@ class MovieCollection extends React.Component {
 
     return(
       <div className="ui grid container">
-        <div className="four wide coloumn">
-          {movieList}
+          <div id="movie_post_list">
+            <ul>
+              {movieList}
+            </ul>
+          </div>
         </div>
-      </div>
     )
   }
 

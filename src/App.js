@@ -9,6 +9,7 @@ import MovieCollection from './components/MovieCollection'
 import Favorites from './components/Favorites'
 import MyMovies from './components/MyMovies'
 import UpdateInfo from './components/UpdateInfo'
+import MovieInfo from './components/MovieInfo'
 import { Switch, Route } from 'react-router-dom'
 
 class App extends React.Component{
@@ -113,8 +114,6 @@ setAllMovies = () => {
      favorites: [...this.state.favorites, movie]
    })
    console.log(this.state.favorites)
-
-
  }
 
  handleLogout = () => {
@@ -122,6 +121,21 @@ setAllMovies = () => {
      localStorage.clear()
    }
  }
+
+ singleMoviePage = (movie) => { //allows user to view the show page for an individual movie they click on
+   fetch(`http://localhost:3000/users/${this.state.current_user_id}/movies/${movie.id}`, {
+     method: 'GET'
+   })
+   .then(res => res.json())
+   .then(movieData => {
+     this.setState({
+       movies: movieData.movies
+     })
+   })
+ }
+
+
+
   render(){
     return (
       <div>
@@ -147,6 +161,7 @@ setAllMovies = () => {
             allmovies={this.setAllMovies}
             deleteMovie={this.deleteMovie}
             favMovie={this.favMovie}
+            singleMoviePage={this.singleMoviePage}
             {...routerProps}/>} />
           <Route path="/my_movie_posts" render={(routerProps)=> <MyMovies
             username={this.state.username}
@@ -160,6 +175,9 @@ setAllMovies = () => {
             {...routerProps}/>} />
           <Route path="/update" render={(routerProps) => <UpdateInfo
             current_user_id={this.state.current_user_id}
+            {...routerProps}/>} />
+          <Route path="" render={(routerProps) => <MovieInfo
+            username={this.state.username}
             {...routerProps}/>} />
         </Switch>
       </div>
