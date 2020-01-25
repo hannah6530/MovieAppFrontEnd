@@ -31,7 +31,6 @@ class CreatePost extends React.Component {
         this.props.onNewMovie(this.state)
         this.props.history.push('/movies')
        })
-
     }
 
   render(){

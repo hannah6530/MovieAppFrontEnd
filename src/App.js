@@ -176,6 +176,7 @@ setupdateInfo = (username, name, email) => {
             singleMoviePage={this.singleMoviePage}
             {...routerProps}/>} />
           <Route path="/my_movie_posts" render={(routerProps)=> <MyMovies
+            favMovie={this.favMovie}
             username={this.state.username}
             setMovies={this.setMovies}
             movies={this.state.movies}
