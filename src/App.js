@@ -66,7 +66,7 @@ setMovies = () => { //allows the user to see the movie posts they created
 }
 
 
-setAllMovies = () => {
+setAllMovies = () => { //allows user to see all movies that were created by all users
   if(this.state.current_user_id ){
     fetch("http://localhost:3000/movies", {
       method: 'GET'
@@ -79,7 +79,16 @@ setAllMovies = () => {
     })
   }
 }
+//write a function called update profile and pass it down to updateinfo.js
 
+setupdateInfo = (username, name, email) => {
+  this.setState({
+    email: email,
+    name: name,
+    username: username
+  })
+
+}
   setLogin = (username, current_user_id, name, email) => {
     this.setState({
       email: email,
@@ -113,13 +122,17 @@ setAllMovies = () => {
    this.setState({
      favorites: [...this.state.favorites, movie]
    })
-   console.log(this.state.favorites)
+    console.log(this.state.favorites)
  }
 
- handleLogout = () => {
+ handleLogout = () => { //ask tutor to assist with logout button
    if(localStorage.token){
      localStorage.clear()
    }
+
+   this.setState({
+     logged_in: ''
+   })
  }
 
  singleMoviePage = (movie) => { //allows user to view the show page for an individual movie they click on
@@ -133,7 +146,6 @@ setAllMovies = () => {
      })
    })
  }
-
 
 
   render(){
@@ -175,6 +187,7 @@ setAllMovies = () => {
             {...routerProps}/>} />
           <Route path="/update" render={(routerProps) => <UpdateInfo
             current_user_id={this.state.current_user_id}
+            setupdateInfo = {this.setupdateInfo}
             {...routerProps}/>} />
           <Route path="" render={(routerProps) => <MovieInfo
             username={this.state.username}

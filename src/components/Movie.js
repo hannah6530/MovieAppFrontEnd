@@ -8,6 +8,9 @@ const Movie = (props) => {
   }
   let handleClickFav = () => {
     props.handleFavMovie(props)
+    //getting error saying it is not a function
+    // but am able to console.log('hi') so function is connected to button
+
   }
 
   return(

@@ -11,9 +11,7 @@ export default class ProfilePage extends React.Component{
   }
 
   handleLogout = () => {
-    if(localStorage.token){
-      this.props.logout()
-    }
+    this.props.logout()
   }
 
   render()
