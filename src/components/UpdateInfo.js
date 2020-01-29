@@ -25,11 +25,8 @@ class UpdateInfo extends React.Component{
     })
     .then(res => res.json())
     .then(data => {
-      if (data.token) {
-        localStorage.token = data.token
-        this.props.history.push('/profile')
-        this.props.setupdateInfo(data.username, data.name, data.email)
-      }
+      this.props.setupdateInfo(data.username, data.name, data.email)
+      this.props.history.push('/profile')
     })
     // console.log(this.props.current_user_id)
   }
