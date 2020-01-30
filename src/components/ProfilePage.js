@@ -20,7 +20,7 @@ export default class ProfilePage extends React.Component{
       <div>
         <h2 id="h2">Hello {this.props.name}</h2>
         <br/>
-        <button className="favoriteButton">Favorites</button>
+        <button className="favoriteButton"><Link to="favorites">Favorites</Link></button>
         <br/>
         <button className="favoriteButton"><Link to="/my_movie_posts">My Movie Posts</Link></button>
         <br/>

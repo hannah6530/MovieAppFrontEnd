@@ -2,11 +2,11 @@ import React from 'react'
 import Movie from './Movie'
 import { Grid } from 'semantic-ui-react'
 
-class Favorites extends React.Component {
+class MyFavorites extends React.Component {
 
-  componentDidMount() {
-    this.props.setMovies()
-  }
+  // componentDidMount() {
+  //   this.props.setMovies()
+  // }
 
   render(){
     const movieList = this.props.movies.map(movie =>{
@@ -21,4 +21,4 @@ class Favorites extends React.Component {
   }
 
 }
-export default Favorites;
+export default MyFavorites;

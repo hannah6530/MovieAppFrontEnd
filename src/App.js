@@ -6,7 +6,7 @@ import Signup from './components/Signup'
 import ProfilePage from './components/ProfilePage'
 import NavBar from './components/NavBar'
 import MovieCollection from './components/MovieCollection'
-import Favorites from './components/Favorites'
+import MyFavorites from './components/MyFavorites'
 import MyMovies from './components/MyMovies'
 import UpdateInfo from './components/UpdateInfo'
 import MovieInfo from './components/MovieInfo'
@@ -119,11 +119,38 @@ setupdateInfo = (username, name, email) => {
   }
  }
  favMovie = (movie) => {
-   this.setState({
-     favorites: [...this.state.favorites, movie]
+   fetch(`http://localhost:3000/users/${this.state.current_user_id}/favorites`, {
+     method: 'POST',
+     headers: {
+       'Content-Type': 'application/json',
+       'Accept': 'application/json'
+     },
+     body: JSON.stringify(this.state)
    })
-    console.log(this.state.favorites)
- }
+     .then(res => res.json())
+     .then(() => {
+       this.setState({
+         favorites: [...this.state.favorites, movie]
+       })
+       // this.props.history.push('/favorites')
+      })
+   }
+
+
+
+ // showFavMovies = (favorites) => {
+ //   if(this.state.current_user_id){
+ //     fetch(`http://localhost:3000/users/${this.state.current_user_id}/favorites/${movie.id}`, {
+ //       method: 'GET'
+ //     })
+ //     .then(res => res.json())
+ //     .then((movieData) => {
+ //       this.setState({
+ //         favorites: movieData.favorites
+ //       })
+ //     })
+ //   }
+ // }
 
  handleLogout = () => { //ask tutor to assist with logout button
    if(localStorage.token){
@@ -182,7 +209,8 @@ setupdateInfo = (username, name, email) => {
             movies={this.state.movies}
             deleteMovie={this.deleteMovie}
             {...routerProps}/>} />
-          <Route path="/favorites" render={(routerProps) => <Favorites
+          <Route path="/favorites" render={(routerProps) => <MyFavorites
+            deleteMovie={this.deleteMovie}
             favorites={this.state.favorites}
             movies={this.state.movies}
             {...routerProps}/>} />
