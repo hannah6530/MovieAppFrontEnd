@@ -118,6 +118,7 @@ setupdateInfo = (username, name, email) => {
     })
   }
  }
+ 
  favMovie = (movie) => {
    fetch(`http://localhost:3000/users/${this.state.current_user_id}/favorites`, {
      method: 'POST',
