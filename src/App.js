@@ -118,15 +118,18 @@ setupdateInfo = (username, name, email) => {
     })
   }
  }
- 
- favMovie = (movie) => {
+
+
+
+ favMovie = (movie, movieInfo) => {
+   movieInfo = {movie_id: movie.id, user_id: this.state.current_user_id}
    fetch(`http://localhost:3000/users/${this.state.current_user_id}/favorites`, {
      method: 'POST',
      headers: {
        'Content-Type': 'application/json',
        'Accept': 'application/json'
      },
-     body: JSON.stringify(this.state)
+     body: JSON.stringify(movieInfo)
    })
      .then(res => res.json())
      .then(() => {
