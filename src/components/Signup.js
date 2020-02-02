@@ -7,7 +7,8 @@ export default class Signup extends React.Component{
     name: '',
     email: '',
     username: '',
-    password: ''
+    password: '',
+    user_id: ''
   }
   handleChange = (event) => {
     this.setState({[event.target.name]: event.target.value})
@@ -28,6 +29,7 @@ export default class Signup extends React.Component{
       if (data.token) {
         localStorage.token = data.token
         this.props.history.push('/profile')
+        this.props.setLogin(data.username, data.user_id, data.name, data.email)
       }
     })
   }

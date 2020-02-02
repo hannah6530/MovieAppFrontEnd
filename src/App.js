@@ -119,8 +119,6 @@ setupdateInfo = (username, name, email) => {
   }
  }
 
-
-
  favMovie = (movie, movieInfo) => {
    movieInfo = {movie_id: movie.id, user_id: this.state.current_user_id}
    fetch(`http://localhost:3000/users/${this.state.current_user_id}/favorites`, {
@@ -136,25 +134,25 @@ setupdateInfo = (username, name, email) => {
        this.setState({
          favorites: [...this.state.favorites, movie]
        })
-       // this.props.history.push('/favorites')
+       this.props.history.push('/favorites')
       })
    }
 
 
 
- // showFavMovies = (favorites) => {
- //   if(this.state.current_user_id){
- //     fetch(`http://localhost:3000/users/${this.state.current_user_id}/favorites/${movie.id}`, {
- //       method: 'GET'
- //     })
- //     .then(res => res.json())
- //     .then((movieData) => {
- //       this.setState({
- //         favorites: movieData.favorites
- //       })
- //     })
- //   }
- // }
+ showFavMovies = (favorites, movie) => {
+   if(this.state.current_user_id){
+     fetch(`http://localhost:3000/users/${this.state.current_user_id}/favorites/${movie.id}`, {
+       method: 'GET'
+     })
+     .then(res => res.json())
+     .then((movieData) => {
+       this.setState({
+         favorites: movieData.favorites
+       })
+     })
+   }
+ }
 
  handleLogout = () => { //ask tutor to assist with logout button
    if(localStorage.token){
@@ -191,6 +189,7 @@ setupdateInfo = (username, name, email) => {
           logout={this.handleLogout}
           {...routerProps} />} />
           <Route path="/signup" render={(routerProps)=> <Signup
+            setLogin={this.setLogin}
             {...routerProps}/>} />
           <Route exact path="/" render={(routerProps)=> <Login
           setLogin={this.setLogin}
