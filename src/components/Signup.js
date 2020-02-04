@@ -29,7 +29,7 @@ export default class Signup extends React.Component{
       if (data.token) {
         localStorage.token = data.token
         this.props.history.push('/profile')
-        this.props.setLogin(this.state.username, data.user_id, this.state.name, this.state.email)
+        this.props.setLogin(data.username, data.user_id, data.name, data.email)
       }
     })
   }
