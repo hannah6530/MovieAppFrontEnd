@@ -262,6 +262,50 @@ i:hover{
    box-shadow: 0 5px 15px rgba(145, 92, 182, .4);
 }
 #movie_post_list ul{
-  lis-style: none;
+  list-style: none;
   width: 650px;
+}
+.searchContainer{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 45vh;
+  background-color: #0000CC;
+  background: rgba(0,0,0,0.3);
+}
+.search_box{
+  width: 40%;
+  position: absolute;
+  top: 22%;
+}
+.search_box input[type="text"]{
+  width: 100%;
+  padding: 10px;
+}
+label{
+  position: relative;
+  top: -25px;
+  font-weight: bold;
+  color: white;
+  font-style: italic;
+  font-family: cursive;
+  font-size: 25px;
+}
+.searchButton{
+  position: absolute;
+  right: -32%;
+  top: 27%;
+  background: none;
+  color: #ccc;
+  width: 145px;
+  height: 42px;
+  border: 2px solid #338033;
+  font-size:  18px;
+  border-radius: 4px;
+
+}
+.searchButton:hover{
+  color: violet;
+  font-weight: bold;
+  transition: .6s;
 }

@@ -1,6 +1,5 @@
 import React from 'react'
 import Movie from './Movie'
-import { Grid } from 'semantic-ui-react'
 
 class MyFavorites extends React.Component {
 

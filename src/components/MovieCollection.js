@@ -1,6 +1,8 @@
+// when you refresh page it goes blank and when i click on the movies link it does nothing
+//when i click on the profile page and then click movies the data appears again
 import React from 'react'
 import Movie from './Movie'
-import { Grid } from 'semantic-ui-react'
+import { Grid, Card } from 'semantic-ui-react'
 
 
 class MovieCollection extends React.Component {
@@ -18,13 +20,15 @@ class MovieCollection extends React.Component {
     })
 
     return(
-      <div className="ui grid container">
-          <div id="movie_post_list">
-            <ul>
-              {movieList}
-            </ul>
-          </div>
+
+    <div className="ui grid container" >
+      <div className="five column row">
+       <div className="three wide column">
+        {movieList}
         </div>
+        </div>
+        </div>
+
     )
   }
 

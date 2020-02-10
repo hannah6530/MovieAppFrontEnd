@@ -1,6 +1,5 @@
 import React from 'react'
 import Movie from './Movie'
-import { Grid } from 'semantic-ui-react'
 
 class MyMovies extends React.Component {
 
@@ -14,9 +13,14 @@ class MyMovies extends React.Component {
     })
 
     return(
-      <Grid columns={5}>
-      {movieList}
-      </Grid>
+      <div className="ui grid container">
+          <div id="movie_post_list">
+            <ul>
+              {movieList}
+            </ul>
+          </div>
+        </div>
+
     )
   }
 

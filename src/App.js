@@ -9,7 +9,7 @@ import MovieCollection from './components/MovieCollection'
 import MyFavorites from './components/MyFavorites'
 import MyMovies from './components/MyMovies'
 import UpdateInfo from './components/UpdateInfo'
-import MovieInfo from './components/MovieInfo'
+import SearchMovies from './components/SearchMovies'
 import { Switch, Route } from 'react-router-dom'
 
 class App extends React.Component{
@@ -221,8 +221,7 @@ setupdateInfo = (username, name, email) => {
             current_user_id={this.state.current_user_id}
             setupdateInfo = {this.setupdateInfo}
             {...routerProps}/>} />
-          <Route path="" render={(routerProps) => <MovieInfo
-            username={this.state.username}
+            <Route path="/search_movies" render={(routerProps) => <SearchMovies
             {...routerProps}/>} />
         </Switch>
       </div>

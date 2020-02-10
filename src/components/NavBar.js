@@ -11,6 +11,14 @@ class NavBar extends React.Component{
         <h4 className="logo">Movie Splazz</h4>
         <nav>
             <ul className="navLinks">
+                <li>
+                <div class="ui category search">
+                  <div class="color" class="ui icon input">
+                    <input class="prompt" type="text" placeholder="Search movies..."></input>
+                     <i class="search icon"></i>
+                      </div>
+                       </div>
+                    </li>
                 <li><Link to="/profile">Profile</Link></li>
                 <li><Link to="/movies">Movies</Link></li>
                 <li><Link to="/createpost">Create Post</Link></li>
