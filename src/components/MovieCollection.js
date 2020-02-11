@@ -20,7 +20,6 @@ class MovieCollection extends React.Component {
     })
 
     return(
-
     <div className="ui grid container" >
       <div className="five column row">
        <div className="three wide column">

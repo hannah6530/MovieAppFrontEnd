@@ -1,5 +1,6 @@
 import React from 'react'
 import { Grid, Image, Icon, Card} from 'semantic-ui-react'
+import { withRouter } from 'react-router';
 
 const Movie = (props) => {
 
@@ -8,9 +9,10 @@ const Movie = (props) => {
   }
   let handleClickFav = () => {
     props.handleFavMovie(props)
+    if(props.history){
+        props.history.push("/favorites")
+    }
   }
-
-  console.log(props)
 
   return(
           <div className="ui segment">
@@ -24,4 +26,4 @@ const Movie = (props) => {
 
 }
 
-export default Movie;
+export default withRouter(Movie);

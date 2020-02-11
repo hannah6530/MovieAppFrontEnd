@@ -32,6 +32,7 @@ class App extends React.Component{
   componentDidMount() {
     // let id = (localStorage.token) get user ID based on the token
     if (localStorage.token) {
+
   fetch('http://localhost:3000/profile', {
     headers: {
       Authorization: localStorage.token
@@ -46,6 +47,7 @@ class App extends React.Component{
       username: profileData.username,
       logged_in: localStorage.token
     })
+    this.setAllMovies();
   })
 
   }
@@ -131,10 +133,11 @@ setupdateInfo = (username, name, email) => {
    })
      .then(res => res.json())
      .then(() => {
+
        this.setState({
          favorites: [...this.state.favorites, movie]
        })
-       this.props.history.push('/favorites')
+
       })
    }
 
@@ -215,6 +218,7 @@ setupdateInfo = (username, name, email) => {
           <Route path="/favorites" render={(routerProps) => <MyFavorites
             deleteMovie={this.deleteMovie}
             favorites={this.state.favorites}
+            favMovie={this.favMovie}
             movies={this.state.movies}
             {...routerProps}/>} />
           <Route path="/update" render={(routerProps) => <UpdateInfo
